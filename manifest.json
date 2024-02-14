@@ -1,0 +1,27 @@
+{
+  "name": "PixCleaner",
+  "id": "738992712906748191",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "menu": [
+    {
+      "name": "Run",
+      "command": "removebgfunc"
+    },
+    {
+      "separator": true
+    },
+    {
+      "name": "Set API Key",
+      "command": "removebgkey"
+    }
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api.pixcleaner.com/v2/autoremove",
+      "https://cdn.pixcleaner.com/"
+    ]
+  }
+}
