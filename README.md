@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Figma Remove.bg Plugin
 
 Remove background of images with just 1-click (Using https://www.remove.bg/).
@@ -36,3 +37,7 @@ Done! Now _Plugins -> Development -> Remove BG -> Run/Set API Key_
 ## Author
 
 - Aaron Iker ([Twitter](https://twitter.com/aaroniker_me))
+=======
+# remove-bg-figma-plugin
+Pixcleaner remove bg figma-plugin
+>>>>>>> f94e474aeb1915d13f755e2770e4521516f9f361
