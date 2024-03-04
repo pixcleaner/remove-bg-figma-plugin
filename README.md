@@ -4,7 +4,7 @@
 <tr>
 <td>
 Enhance your design workflow in Figma by automatically removing image backgrounds with a single click, powered by Pixcleaner. 
-  This plugin leverages the advanced capabilities of [Pixcleaner.com](https://pixcleaner.com) to provide quick and accurate background removal directly within your Figma projects.
+  This plugin leverages the advanced capabilities of Pixcleaner AI (https://pixcleaner.com) to provide quick and accurate background removal directly within your Figma projects.
 </td>
 <td>
 
