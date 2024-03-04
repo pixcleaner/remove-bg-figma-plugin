@@ -7,7 +7,7 @@
     "dev": "webpack --mode=development --watch",
     "build": "webpack"
   },
-  "author": "Aaron Iker",
+  "author": "TSG",
   "license": "MIT",
   "devDependencies": {
     "@figma/plugin-typings": "^1.86.0",
