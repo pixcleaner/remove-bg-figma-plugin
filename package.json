@@ -1,5 +1,5 @@
 {
-  "name": "figma-remove-bg",
+  "name": "Remove BG by Pixcleaner",
   "version": "1.0.0",
   "description": "Remove the background of images automatically",
   "main": "code.js",
