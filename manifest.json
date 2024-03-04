@@ -1,6 +1,6 @@
 {
-  "name": "PixCleaner",
-  "id": "738992712906748191",
+  "name": "Remove BG by Pixcleaner",
+  "id": "1346425501695248048",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
