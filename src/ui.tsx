@@ -45,9 +45,6 @@ export const App: React.FC = () => {
           const formData = new FormData();
           formData.append("size", "auto");
           formData.append("image_file_b64", base64);
-          console.log(event.data.pluginMessage.apikey,)
-          let credits: string = "";
-          console.log("here ")
           fetch("https://api.pixcleaner.com/v2/autoremove", {
             method: "POST",
             headers: {
@@ -59,29 +56,47 @@ export const App: React.FC = () => {
           })
           .then(response => response.json())
             .then(async (data) => {
+              if (data.statusCode && data.statusCode == 403){
+                return  parent.postMessage({
+                  pluginMessage:{
+                    type:"error",
+                    error:"Invalid API KEY",
+                    code: "INVALID_CREDENTIALS",
+                    uint8Array: null,
+                  }
+                }, "*");
+              }
+              if (data.statusCode && data.statusCode == 400){
+                return parent.postMessage({
+                  pluginMessage:{
+                    type:"error",
+                    error:"Insufficent Credits, Visit PixCleaner",
+                    code:"INSUFFICENT_CREDITS",
+                    uint8Array:null,
+                  }
+                },"*")
+              }
+              if (data.state && data.state === "success") {
               const url = data.resultImage.url
-              console.log("here 444 1" + url)
               const response = await fetch(url);
               if (!response.ok) {
                   throw new Error(`HTTP error! Status: ${response.status}`);
               }
               const blob = await response.blob();
-              console.log('Blob representation of the image:', blob);
-          
               const arrayBuffer = await blob.arrayBuffer();
-              console.log('ArrayBuffer representation of the image:', arrayBuffer);
           
               const uint8Array = new Uint8Array(arrayBuffer);
-              console.log('Uint8Array representation of the image:', uint8Array);
               parent.postMessage(
                 {
                   pluginMessage: {
-                    uint8Array,
-                    credits,
+                    type:"success",
+                    error: null,
+                    code: null,
+                    uint8Array: uint8Array,
                   },
                 },
                 "*"
-              );
+              ); }
             })
             .catch((response) => {
               try {
